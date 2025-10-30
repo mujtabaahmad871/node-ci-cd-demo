@@ -2,9 +2,9 @@ name: Node CI Pipeline
 
 on:
   push:
-    branches: [ main ]  # or 'master' if that's your branch name
+    branches: [ master ]  # or 'master' if that's your branch name
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-test:
@@ -24,3 +24,4 @@ jobs:
 
     - name: Run tests
       run: npm test
+
