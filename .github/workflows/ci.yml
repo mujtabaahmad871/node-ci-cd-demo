@@ -2,9 +2,9 @@ name: Node CI Pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]  # or 'master' if that's your branch name
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-and-test:
@@ -12,17 +12,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      name: actions/Checkout@v3
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v3
       with:
         node-version: '18'
 
     - name: Install dependencies
-      run: npm Install
+      run: npm install
 
     - name: Run tests
       run: npm test
-      
-
